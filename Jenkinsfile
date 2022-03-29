@@ -1,5 +1,10 @@
 pipeline {
     agent any
+				tools {
+				git 'Git' git credentialsId: 'GitHub', url: 'https://github.com/saikirannesa/Project.git'
+				jdk 'JAVA_HOME'
+				maven 'M2_HOME'
+		  }
     stages {
         stage('mvn clean') {
             steps {
