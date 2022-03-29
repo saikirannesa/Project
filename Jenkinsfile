@@ -1,5 +1,10 @@
 pipeline {
     agent any
+	tools {
+			git 'Git'
+			jdk 'JAVA_HOME'
+			maven 'M2_HOME'
+		  }
     stages {
         stage('mvn Clean') {
             steps {
