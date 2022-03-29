@@ -1,22 +1,25 @@
 pipeline {
-    agent none
+    agent any
 
     stages {
-
-        stage ('Hello') {
-            agent any
-
+        stage('Build') {
             steps {
-                echo 'Hello, '
-
-                sh '''#!/bin/bash
-
-                    echo "Hello from bash"
-                    echo "Who I'm $SHELL"
-                '''
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
 }
+
+
 
 
