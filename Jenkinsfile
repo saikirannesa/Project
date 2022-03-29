@@ -20,25 +20,25 @@ pipeline {
         }
 		stage('mvn Compile') {
             steps {
-						sh 'mvn Compile'
+						sh 'mvn compile'
 						echo 'Compiling..'
             }
         }
         stage('mvn Test') {
             steps {
-						sh 'mvn Test'
+						sh 'mvn test'
 						echo 'Testing..'
             }
         }
 		stage('mvn Package') {
 			steps {
-						sh 'mvn Package'
+						sh 'mvn package'
 						echo 'Package..'
 			}
 		}
 		stage('mvn Verify') {
             steps {
-						sh 'mvn Verify'
+						sh 'mvn verify'
 						echo 'Verifying..'
             }
         }
@@ -50,7 +50,7 @@ pipeline {
         }
         stage('mvn Deploy') {
             steps {
-						sh 'mvn Deploy'
+						sh 'mvn deploy'
 						echo 'Deploying..'
             }
         }
