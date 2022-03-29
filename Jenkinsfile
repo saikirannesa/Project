@@ -48,12 +48,6 @@ pipeline {
 						echo 'SONAR SCAN..'
             }
         }
-        stage('mvn Deploy') {
-            steps {
-						sh 'mvn deploy'
-						echo 'Deploying..'
-            }
-        }
     }
 }
 
