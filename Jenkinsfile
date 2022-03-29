@@ -1,9 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage('mvn clean') {
+        stage('mvn Clean') {
             steps {
-                echo 'clean..'
+                echo 'Clean..'
+            }
+        }
+		stage('mvn Validate') {
+            steps {
+                echo 'Validating..'
+            }
+        }
+		stage('mvn Compile') {
+            steps {
+                echo 'Compiling..'
             }
         }
         stage('mvn Test') {
@@ -11,14 +21,24 @@ pipeline {
                 echo 'Testing..'
             }
         }
-		stage('mvn package') {
+		stage('mvn Package') {
 			steps {
 					echo 'Package..'
 			}
 		}
+		stage('mvn Verify') {
+            steps {
+                echo 'Verifying..'
+            }
+        }
+		stage('mvn SONAR SCAN') {
+            steps {
+                echo 'SONAR SCAN..'
+            }
+        }
         stage('mvn Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying..'
             }
         }
     }
