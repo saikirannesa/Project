@@ -3,42 +3,50 @@ pipeline {
     stages {
         stage('mvn Clean') {
             steps {
-                echo 'Clean..'
+						sh 'mvn clean'
+						echo 'Clean..'
             }
         }
 		stage('mvn Validate') {
             steps {
-                echo 'Validating..'
+						sh 'mvn validate'
+						echo 'Validating..'
             }
         }
 		stage('mvn Compile') {
             steps {
-                echo 'Compiling..'
+						sh 'mvn Compile'
+						echo 'Compiling..'
             }
         }
         stage('mvn Test') {
             steps {
-                echo 'Testing..'
+						sh 'mvn Test'
+						echo 'Testing..'
             }
         }
 		stage('mvn Package') {
 			steps {
-					echo 'Package..'
+						sh 'mvn Package'
+						echo 'Package..'
 			}
 		}
 		stage('mvn Verify') {
             steps {
-                echo 'Verifying..'
+						sh 'mvn Verify'
+						echo 'Verifying..'
             }
         }
 		stage('mvn SONAR SCAN') {
             steps {
-                echo 'SONAR SCAN..'
+						sh 'mvn SONAR SCAN'
+						echo 'SONAR SCAN..'
             }
         }
         stage('mvn Deploy') {
             steps {
-                echo 'Deploying..'
+						sh 'mvn Deploy'
+						echo 'Deploying..'
             }
         }
     }
