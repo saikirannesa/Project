@@ -1,7 +1,6 @@
 pipeline {
     agent any
 		tools {
-		  git 'Git'
 		  maven 'M2_HOME'
 		  jdk 'JAVA_HOME'
 		  }
