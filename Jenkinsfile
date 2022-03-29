@@ -1,6 +1,10 @@
 pipeline {
     agent any
-
+		tools {
+		  git 'Git'
+		  maven 'M2_HOME'
+		  jdk 'JAVA_HOME'
+		  }
     stages {
         stage('mvn clean') {
             steps {
@@ -15,7 +19,8 @@ pipeline {
 		stage('mvn package') {
 			steps {
 					echo 'Package..'
-  }
+			}
+		}
         stage('mvn Deploy') {
             steps {
                 echo 'Deploying....'
