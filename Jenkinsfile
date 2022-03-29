@@ -44,7 +44,7 @@ pipeline {
         }
 		stage('mvn SONAR SCAN') {
             steps {
-						sh 'mvn SONAR SCAN'
+						sh 'mvn sonar scan'
 						echo 'SONAR SCAN..'
             }
         }
