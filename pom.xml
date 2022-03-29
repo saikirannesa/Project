@@ -65,13 +65,6 @@
     </pluginManagement>
   </build>
 </project>
-<distributionManagement>
-	<snapshotRepositories>
-		<id>Deployment</id>
-		<name>Snapshot Releases</name>
-		<url>Nexus Snapshot URL</url>
-	</snapshotRepositories>
-</distributionManagement> 
 
 
 
