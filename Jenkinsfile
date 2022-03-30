@@ -54,12 +54,6 @@ pipeline {
 						echo 'Installing..'
             }
         }
-		stage('mvn Deploy') {
-            steps {
-						sh 'mvn deploy'
-						echo 'Deploying..'
-            }
-        }
     }
 }
 
