@@ -36,20 +36,33 @@ pipeline {
 						echo 'Package..'
 			}
 		}
-		stage('mvn Verify') {
-            steps {
-						sh 'mvn verify'
-						echo 'Verifying..'
-            }
-        }
 		stage('mvn SONAR SCAN') {
             steps {
 						sh 'mvn integration-test'
 						echo 'SONAR SCAN..'
             }
         }
+		stage('mvn Verify') {
+            steps {
+						sh 'mvn verify'
+						echo 'Verifying..'
+            }
+        }
+		stage('mvn Install') {
+            steps {
+						sh 'mvn install'
+						echo 'Installing..'
+            }
+        }
+		stage('mvn Deploy') {
+            steps {
+						sh 'mvn deploy'
+						echo 'Deploying..'
+            }
+        }
     }
 }
+
 
 
 
